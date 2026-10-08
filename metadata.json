@@ -1,0 +1,6 @@
+{
+  "name": "Chromium Aura - Secure Privacy Browser",
+  "description": "Ein moderner, Chromium-basierter Datenschutz-Browser mit integriertem VPN, Cloudflare 1.1.1.1 DNS, Adblocker, Passwortmanager, Google Sync und anonymer Startseite.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

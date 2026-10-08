@@ -1,0 +1,54 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check authentication
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check ownership
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Top-level Browser Bookmarks collection stored in Firestore
+    match /bookmarks/{bookmarkId} {
+      allow read, write: if true;
+    }
+
+    // User profile rule
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      // User settings
+      match /settings/{settingId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User fully indexed browser contents
+      match /indexItems/{itemId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User bookmarks
+      match /bookmarks/{bookmarkId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User browsing history
+      match /history/{historyId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // User speed dial tiles
+      match /speedDialTiles/{tileId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Gemini AI Chat messages
+      match /chatMessages/{messageId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+  }
+}

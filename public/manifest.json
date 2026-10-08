@@ -1,0 +1,55 @@
+{
+  "id": "/",
+  "name": "Chromium Aura Browser",
+  "short_name": "AuraBrowser",
+  "description": "Sicherer Datenschutz-Browser mit integriertem, synchronisiertem Passwort-Tresor und Web-App-Funktion",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Passwort-Tresor",
+      "short_name": "Tresor",
+      "description": "Geschützten Passwortmanager öffnen",
+      "url": "/?open=password",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Speed Dial Startseite",
+      "short_name": "Start",
+      "description": "Browser-Startseite öffnen",
+      "url": "/?open=speeddial",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
